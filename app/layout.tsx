@@ -18,6 +18,9 @@ const PLAUSIBLE_API_ENDPOINT = process.env.NEXT_PUBLIC_PLAUSIBLE_API || 'https:/
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
+  // Extend the layout into the display cutout area so `env(safe-area-inset-*)`
+  // resolves to real values, letting overlays (e.g. toasts) clear the notch.
+  viewportFit: 'cover',
   themeColor: [
     { media: '(prefers-color-scheme: light)', color: '#5a4ba3' },
     { media: '(prefers-color-scheme: dark)', color: '#a78bfa' },
