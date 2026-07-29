@@ -56,6 +56,15 @@ Thank you for your interest in contributing to Stellar! This document provides g
 - **Services**: Rust backend services in `services/`
 - **Tests**: Unit and integration tests
 
+### Examples & demo code (`examples/`)
+- **Illustrative, non-production code** lives in `examples/` — never inside the
+  app source tree (`app/`, `components/`, `lib/`).
+- `examples/` is listed under `exclude` in `tsconfig.json`, so demo code is not
+  type-checked as part of the production build and is not reachable by the app
+  bundler through source globs.
+- Keeping demos out of the source tree stops contributors from mistaking them
+  for live, maintained code. See [`examples/README.md`](examples/README.md).
+
 ## Development Workflow
 
 ### Creating a Feature
